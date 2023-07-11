@@ -8,11 +8,11 @@ export const Labels: labelsType = {
           title: "Language",
           items: [
             {
-              key: 1,
+              key: "french",
               item: "Français",
             },
             {
-              key: 2,
+              key: "english",
               item: "Anglais",
             },
           ],
@@ -39,11 +39,11 @@ export const Labels: labelsType = {
           title: "Language",
           items: [
             {
-              key: 1,
+              key: "french",
               item: "French",
             },
             {
-              key: 2,
+              key: "english",
               item: "English",
             },
           ],

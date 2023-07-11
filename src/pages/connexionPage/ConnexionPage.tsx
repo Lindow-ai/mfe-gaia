@@ -4,7 +4,7 @@ import { CONNEXION } from "../../utils/pageType/pageType";
 const ConnexionPage = () => {
   return (
     <div>
-      <DropdownMenu pageType={CONNEXION} />
+      <DropdownMenu pageType={CONNEXION} defaultValue="french" />
     </div>
   );
 };

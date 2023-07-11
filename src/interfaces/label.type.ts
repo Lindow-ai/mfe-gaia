@@ -22,7 +22,7 @@ export interface dropdown {
 }
 
 export interface item {
-  key: number;
+  key: number | string;
   item: string;
 }
 
