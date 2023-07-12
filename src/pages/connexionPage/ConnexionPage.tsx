@@ -1,12 +1,11 @@
-import DropdownMenu from "../../components/dropdown";
 import Form from "../../components/form";
-import { CONNEXION } from "../../utils/pageType/pageType";
 import { Image } from "@nextui-org/react";
+import { CONNEXION } from "../../utils/pageType/pageType";
+import CardComponent from "../../components/card";
 
 const ConnexionPage = () => {
   return (
     <div>
-      <DropdownMenu pageType={CONNEXION} defaultValue="french" />
       <div style={{ marginTop: "9vw" }}>
         <Image
           width={"29vw"}
@@ -15,7 +14,9 @@ const ConnexionPage = () => {
           alt="Default Image"
           objectFit="cover"
         />
-        <Form />
+        <CardComponent pageType={CONNEXION}>
+          <Form pageType={CONNEXION} />
+        </CardComponent>
       </div>
     </div>
   );
