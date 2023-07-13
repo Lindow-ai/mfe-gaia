@@ -1,3 +1,4 @@
 const CONNEXION = "connexion";
+const ADHESION = "adhesion";
 
-export { CONNEXION };
+export { CONNEXION, ADHESION };

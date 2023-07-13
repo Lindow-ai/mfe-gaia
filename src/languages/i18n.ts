@@ -82,7 +82,7 @@ i18n
               inputType: {
                 text: "Matricule",
                 textWithImage: "Login",
-                password: "Password",
+                password: "Mot de passe",
               },
               row: {
                 checkbox: {
