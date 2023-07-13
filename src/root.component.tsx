@@ -3,7 +3,7 @@ import { NextUIProvider, createTheme } from "@nextui-org/react";
 import ConnexionPage from "./pages/connexionPage";
 import { useDarkMode } from "usehooks-ts";
 import Theme from "./components/theme";
-import './languages/i18n';
+import "./languages/i18n";
 import { CONNEXION } from "./utils/pageType/pageType";
 import DropdownLanguages from "./components/dropdownLanguages";
 
@@ -16,7 +16,6 @@ const darkTheme = createTheme({
 });
 
 export default function Root(props) {
-
   const { isDarkMode, toggle, enable, disable } = useDarkMode();
 
   return (

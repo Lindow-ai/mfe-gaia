@@ -16,7 +16,9 @@ const DropdownLanguages = ({ defaultValue }: DropdownLanguagesType) => {
     i18n.changeLanguage(lng);
   }, []);
 
-  const itemsLanguagesDropdown: Object[] = t(`dropdownLanguage.items`, { returnObjects: true});
+  const itemsLanguagesDropdown: Object[] = t(`dropdownLanguage.items`, {
+    returnObjects: true,
+  });
 
   return (
     <div
@@ -32,9 +34,7 @@ const DropdownLanguages = ({ defaultValue }: DropdownLanguagesType) => {
     >
       <Dropdown>
         <Dropdown.Button css={{ width: "7vw" }} color="default" shadow>
-          {
-            t(`dropdownLanguage.title`)
-          }
+          {t(`dropdownLanguage.title`)}
         </Dropdown.Button>
         <Dropdown.Menu
           // onSelectionChange={setSelected}
@@ -45,15 +45,9 @@ const DropdownLanguages = ({ defaultValue }: DropdownLanguagesType) => {
           variant="shadow"
           aria-label="Actions"
         >
-          {
-            itemsLanguagesDropdown.map((item) => {
-              return (
-                <Dropdown.Item>
-                  {item}
-                </Dropdown.Item>
-              )
-            })
-          }
+          {itemsLanguagesDropdown.map((item, i) => {
+            return <Dropdown.Item key={i}>{item}</Dropdown.Item>;
+          })}
         </Dropdown.Menu>
       </Dropdown>
     </div>

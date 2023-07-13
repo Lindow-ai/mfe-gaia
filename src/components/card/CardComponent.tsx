@@ -1,20 +1,13 @@
 import { useEffect } from "react";
-import {
-  Card,
-  Grid,
-  Text,
-  Button,
-} from "@nextui-org/react";
+import { Card, Grid, Text, Button } from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
-
 
 type cardComponentType = {
   children?: string | JSX.Element | JSX.Element[] | (() => JSX.Element);
-  pageType: string
-}
+  pageType: string;
+};
 
-const CardComponent = ({ children, pageType }: cardComponentType ) => {
-
+const CardComponent = ({ children, pageType }: cardComponentType) => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -52,16 +45,14 @@ const CardComponent = ({ children, pageType }: cardComponentType ) => {
           </Grid>
         </Grid.Container>
       </Card.Header>
-      <Card.Body css={{ py: "$2" }}>
-        {children}
-      </Card.Body>
+      <Card.Body css={{ py: "$2" }}>{children}</Card.Body>
       <Card.Footer>
         <Button auto flat>
           Connexion
         </Button>
       </Card.Footer>
     </Card>
-  )
-}
+  );
+};
 
 export default CardComponent;

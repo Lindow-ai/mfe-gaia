@@ -1,6 +1,6 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 i18n
   // detect user language
@@ -13,7 +13,7 @@ i18n
   .init({
     debug: true,
     returnObjects: true,
-    fallbackLng: 'en',
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
@@ -21,48 +21,50 @@ i18n
       en: {
         translation: {
           dropdownLanguage: {
-              title: "Language",
-              items: [
-                "French",
-                "English"
-              ]
-            },
+            title: "Language",
+            items: ["French", "English"],
+          },
           connexion: {
             card: {
-              title: "Connexion"
+              title: "Connexion",
             },
             form: {
-              inputs: ["Code number", "Login", "Password"]
+              inputType: {
+                text: "Code number",
+                textWithImage: "Login",
+                password: "Password",
+              },
             },
             button: {
-              title: "Connexion"
-            }
-          }
-        }
+              title: "Connexion",
+            },
+          },
+        },
       },
       fr: {
         translation: {
           dropdownLanguage: {
-              title: "Language",
-              items: [
-               "Français",
-               "Anglais"
-              ]
-            },
+            title: "Language",
+            items: ["Français", "Anglais"],
+          },
           connexion: {
             card: {
-              title: "Connection"
+              title: "Connection",
             },
             form: {
-              inputs: ["Matricule", "Login", "Mot de passe"]
+              inputType: {
+                text: "Matricule",
+                textWithImage: "Login",
+                password: "Password",
+              },
             },
             button: {
-              title: "Connection"
-            }
-          }
-        }
+              title: "Connection",
+            },
+          },
+        },
       },
-    }
+    },
   });
 
 export default i18n;
