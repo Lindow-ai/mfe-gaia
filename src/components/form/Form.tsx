@@ -7,32 +7,7 @@ type formType = {
 };
 
 const Form = ({ children }: formType) => {
-  return (
-    <div>
-      {children}
-      {/* {
-        itemsInput.map((text: string, i) => {
-          return (
-            <Input 
-            css={{ marginBottom: "$9" }}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            placeholder={text}
-            key={i} />
-          )
-        })
-      } */}
-      {/* <Row justify="space-between">
-          <Checkbox>
-            <Text size={14}>Se souvenir</Text>
-          </Checkbox>
-          <Text size={14}>Mot de passe oublier ?</Text>
-        </Row> */}
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
 export default Form;

@@ -22,7 +22,7 @@ export default function Root(props) {
     <BrowserRouter>
       <p>Current theme: {isDarkMode ? "dark" : "light"}</p>
       <Theme isDarkMode={isDarkMode} toggle={toggle} />
-      <DropdownLanguages defaultValue="french" />
+      <DropdownLanguages />
       <NextUIProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <ConnexionPage />
       </NextUIProvider>

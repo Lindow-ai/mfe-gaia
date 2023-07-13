@@ -2,19 +2,19 @@ import { Dropdown } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type DropdownLanguagesType = {
-  defaultValue: string;
+type itemsLanguagesDropdownType = {
+  title: string;
+  key: string;
 };
 
-const DropdownLanguages = ({ defaultValue }: DropdownLanguagesType) => {
-  const [selected, setSelected] = useState<any>(new Set([defaultValue]));
+const DropdownLanguages = () => {
+  const [selected, setSelected] = useState<any>(new Set([navigator.language]));
 
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-  }, []);
+    i18n.changeLanguage(selected.values().next().value);
+  }, [selected]);
 
   const itemsLanguagesDropdown: Object[] = t(`dropdownLanguage.items`, {
     returnObjects: true,
@@ -37,17 +37,19 @@ const DropdownLanguages = ({ defaultValue }: DropdownLanguagesType) => {
           {t(`dropdownLanguage.title`)}
         </Dropdown.Button>
         <Dropdown.Menu
-          // onSelectionChange={setSelected}
-          // selectedKeys={selected}
+          onSelectionChange={setSelected}
+          selectedKeys={selected}
           disallowEmptySelection
           selectionMode="single"
           color="default"
           variant="shadow"
           aria-label="Actions"
         >
-          {itemsLanguagesDropdown.map((item, i) => {
-            return <Dropdown.Item key={i}>{item}</Dropdown.Item>;
-          })}
+          {itemsLanguagesDropdown.map(
+            ({ title, key }: itemsLanguagesDropdownType) => {
+              return <Dropdown.Item key={key}>{title}</Dropdown.Item>;
+            }
+          )}
         </Dropdown.Menu>
       </Dropdown>
     </div>

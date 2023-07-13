@@ -1,5 +1,5 @@
 import Form from "../../components/form";
-import { Image, Input } from "@nextui-org/react";
+import { Image, Input, Row, Checkbox, Text } from "@nextui-org/react";
 import { CONNEXION } from "../../utils/pageType/pageType";
 import CardComponent from "../../components/card";
 import { Password } from "../../assets/svg/Password";
@@ -25,39 +25,59 @@ const ConnexionPage = () => {
           alt="Default Image"
           objectFit="cover"
         />
-        <CardComponent pageType={CONNEXION}>
-          <Form>
-            <Input
-              css={{ marginBottom: "$9" }}
-              clearable
-              bordered
-              fullWidth
-              color="primary"
-              size="lg"
-              placeholder={t(`${CONNEXION}.form.inputType.text`)}
-            />
-            <Input
-              css={{ marginBottom: "$9" }}
-              clearable
-              bordered
-              fullWidth
-              color="primary"
-              size="lg"
-              placeholder={t(`${CONNEXION}.form.inputType.textWithImage`)}
-              contentLeft={<Mail fill="currentColor" />}
-            />
-            <Input.Password
-              css={{ marginBottom: "$9" }}
-              clearable
-              bordered
-              fullWidth
-              color="primary"
-              size="lg"
-              placeholder="Mot de passe"
-              contentLeft={<Password fill="currentColor" />}
-            />
-          </Form>
-        </CardComponent>
+
+        <div
+          style={{
+            width: "100vw",
+            position: "relative",
+            display: "flex",
+            flexFlow: "column wrap",
+            alignItems: "center",
+            marginTop: "30px",
+          }}
+        >
+          <CardComponent pageType={CONNEXION}>
+            <Form>
+              <Input
+                css={{ marginBottom: "$9" }}
+                clearable
+                bordered
+                fullWidth
+                color="primary"
+                size="lg"
+                placeholder={t(`${CONNEXION}.form.inputType.text`)}
+              />
+              <Input
+                css={{ marginBottom: "$9" }}
+                clearable
+                bordered
+                fullWidth
+                color="primary"
+                size="lg"
+                placeholder={t(`${CONNEXION}.form.inputType.textWithImage`)}
+                contentLeft={<Mail fill="currentColor" />}
+              />
+              <Input.Password
+                css={{ marginBottom: "$9" }}
+                clearable
+                bordered
+                fullWidth
+                color="primary"
+                size="lg"
+                placeholder="Mot de passe"
+                contentLeft={<Password fill="currentColor" />}
+              />
+              <Row justify="space-between">
+                <Checkbox>
+                  <Text size={14}>
+                    {t(`${CONNEXION}.form.row.checkbox.text`)}
+                  </Text>
+                </Checkbox>
+                <Text size={14}>{t(`${CONNEXION}.form.row.text`)}</Text>
+              </Row>
+            </Form>
+          </CardComponent>
+        </div>
       </div>
     </div>
   );

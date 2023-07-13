@@ -48,7 +48,7 @@ const CardComponent = ({ children, pageType }: cardComponentType) => {
       <Card.Body css={{ py: "$2" }}>{children}</Card.Body>
       <Card.Footer>
         <Button auto flat>
-          Connexion
+          {t(`${pageType}.card.button.title`)}
         </Button>
       </Card.Footer>
     </Card>

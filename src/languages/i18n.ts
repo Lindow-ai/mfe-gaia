@@ -22,11 +22,23 @@ i18n
         translation: {
           dropdownLanguage: {
             title: "Language",
-            items: ["French", "English"],
+            items: [
+              {
+                key: "fr",
+                title: "French",
+              },
+              {
+                key: "en",
+                title: "English",
+              },
+            ],
           },
           connexion: {
             card: {
               title: "Connexion",
+              button: {
+                title: "Connexion",
+              },
             },
             form: {
               inputType: {
@@ -34,9 +46,12 @@ i18n
                 textWithImage: "Login",
                 password: "Password",
               },
-            },
-            button: {
-              title: "Connexion",
+              row: {
+                checkbox: {
+                  text: "Remember me",
+                },
+                text: "Forgot password ?",
+              },
             },
           },
         },
@@ -45,11 +60,23 @@ i18n
         translation: {
           dropdownLanguage: {
             title: "Language",
-            items: ["Français", "Anglais"],
+            items: [
+              {
+                key: "fr",
+                title: "Français",
+              },
+              {
+                key: "en",
+                title: "Anglais",
+              },
+            ],
           },
           connexion: {
             card: {
               title: "Connection",
+              button: {
+                title: "Connection",
+              },
             },
             form: {
               inputType: {
@@ -57,9 +84,12 @@ i18n
                 textWithImage: "Login",
                 password: "Password",
               },
-            },
-            button: {
-              title: "Connection",
+              row: {
+                checkbox: {
+                  text: "Se souvenir",
+                },
+                text: "Mot de passe oublier ?",
+              },
             },
           },
         },
