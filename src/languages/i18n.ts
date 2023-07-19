@@ -35,22 +35,86 @@ i18n
           },
           connexion: {
             card: {
-              title: "Connexion",
-              button: {
-                title: "Connexion",
+              cardHeader: {
+                title: "Connection",
+              },
+              cardSubHeader: {
+                subTitle: "proxiad.com",
+              },
+              cardBody: {
+                form: {
+                  inputType: {
+                    text: "Code number",
+                    textWithImage: "Login",
+                    password: "Password",
+                  },
+                  row: {
+                    checkbox: {
+                      text: "Remember me",
+                    },
+                    text: "Forgot password ?",
+                  },
+                },
+              },
+              cardFooter: {
+                button: {
+                  title: "Connexion",
+                },
               },
             },
-            form: {
-              inputType: {
-                text: "Code number",
-                textWithImage: "Login",
-                password: "Password",
+          },
+          adhesion: {
+            card: {
+              cardHeader: {
+                title: [
+                  "Membership data reminder",
+                  "Please enter your membership details",
+                  "Please indicate the gps coordinates of your home address on the map :",
+                ],
               },
-              row: {
-                checkbox: {
-                  text: "Remember me",
+              cardBody: {
+                items: [
+                  "Home address",
+                  "Phone",
+                  "Email",
+                  "Preferred zone",
+                  "Home GPS coordinates",
+                ],
+                form: {
+                  inputType: {
+                    itemsText: ["Home address", "Phone", "Email"],
+                    search: ["Preferred zone", "Preferred stopping point"],
+                  },
                 },
-                text: "Forgot password ?",
+              },
+              cardFooter: {
+                button: {
+                  title: "Validate",
+                },
+              },
+            },
+            modal: {
+              modalHeader: {
+                title: "Service usage rule",
+              },
+              modalBody: {
+                items: [
+                  "Members are required to carry a badge proving their eligibility for the service at all times.",
+                  "The minimum number of validants required for a shuttle is one.",
+                  "...",
+                ],
+              },
+              modalFooter: {
+                row: {
+                  col: {
+                    checkbox: {
+                      text: "I have read and understood",
+                    },
+                    button: {
+                      title: "Validate",
+                    },
+                  },
+                },
               },
             },
           },
@@ -73,22 +137,86 @@ i18n
           },
           connexion: {
             card: {
-              title: "Connection",
-              button: {
-                title: "Connection",
+              cardHeader: {
+                title: "Connexion",
+              },
+              cardSubHeader: {
+                subTitle: "proxiad.com",
+              },
+              cardBody: {
+                form: {
+                  inputType: {
+                    text: "Matricule",
+                    textWithImage: "Login",
+                    password: "Mot de passe",
+                  },
+                  row: {
+                    checkbox: {
+                      text: "Se souvenir",
+                    },
+                    text: "Mot de passe oublier ?",
+                  },
+                },
+              },
+              cardFooter: {
+                button: {
+                  title: "Connection",
+                },
               },
             },
-            form: {
-              inputType: {
-                text: "Matricule",
-                textWithImage: "Login",
-                password: "Mot de passe",
+          },
+          adhesion: {
+            card: {
+              cardHeader: {
+                title: [
+                  "Rappel des données d'adhésion",
+                  "Veuillez saisir vos données d'adhésion",
+                  "Veuillez indiquer sur la carte les coordonnées gps de l'adresse de votre domicile :",
+                ],
               },
-              row: {
-                checkbox: {
-                  text: "Se souvenir",
+              cardBody: {
+                items: [
+                  "Adresse de domicile",
+                  "Téléphone",
+                  "Email",
+                  "Zone préférée",
+                  "Coordonées GPS du domicile",
+                ],
+                form: {
+                  inputType: {
+                    itemsText: ["Adresse du domicile", "Téléphone", "Email"],
+                    search: ["Zone préférée", "Point d'arret préféré"],
+                  },
                 },
-                text: "Mot de passe oublier ?",
+              },
+              cardFooter: {
+                button: {
+                  title: "Valider",
+                },
+              },
+            },
+            modal: {
+              modalHeader: {
+                title: "Règle d'utilisation du service",
+              },
+              modalBody: {
+                items: [
+                  "Les adhérents sont tenus d'être toujours munis d'un badge justifiant leur éligibilité à la prestation.",
+                  "Le nombre minimal de validant donnant lieu à une navette est d'un validant.",
+                  "...",
+                ],
+              },
+              modalFooter: {
+                row: {
+                  col: {
+                    checkbox: {
+                      text: "Je valide avoir pris connaissance",
+                    },
+                    button: {
+                      title: "Valider",
+                    },
+                  },
+                },
               },
             },
           },

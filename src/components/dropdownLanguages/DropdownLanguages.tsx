@@ -14,7 +14,7 @@ const DropdownLanguages = () => {
 
   useEffect(() => {
     i18n.changeLanguage(selected.values().next().value);
-  }, [selected]);
+  }, [selected]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   const itemsLanguagesDropdown: Object[] = t(`dropdownLanguage.items`, {
     returnObjects: true,
