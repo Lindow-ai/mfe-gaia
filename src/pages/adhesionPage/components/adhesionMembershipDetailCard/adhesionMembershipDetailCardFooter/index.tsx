@@ -1,0 +1,3 @@
+import AdhesionMembershipDetailCardFooter from "./AdhesionMembershipDetailCardFooter";
+
+export default AdhesionMembershipDetailCardFooter;

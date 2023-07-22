@@ -1,0 +1,3 @@
+import AdhesionMembershipCardDetailHeader from "./AdhesionMembershipDetailCardHeader";
+
+export default AdhesionMembershipCardDetailHeader;

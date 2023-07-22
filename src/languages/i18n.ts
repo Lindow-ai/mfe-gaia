@@ -34,6 +34,12 @@ i18n
             ],
           },
           connexion: {
+            row: {
+              col: {
+                image:
+                  "https://see.proxiad.com/app/themes/2021/static/media/logo-dark.9c35dfbd.png",
+              },
+            },
             card: {
               cardHeader: {
                 title: "Connection",
