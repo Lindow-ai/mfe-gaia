@@ -5,6 +5,9 @@ import Theme from "./components/theme";
 import "./languages/i18n";
 import DropdownLanguages from "./components/dropdownLanguages";
 import Router from "./router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const querryClient = new QueryClient();
 
 const lightTheme = createTheme({
   type: "light",
@@ -14,25 +17,19 @@ const darkTheme = createTheme({
   type: "dark",
 });
 
-export default function Root(props) {
-  const { isDarkMode, toggle, enable, disable } = useDarkMode();
+export default function Root() {
+  const { isDarkMode, toggle } = useDarkMode();
 
   return (
-    // <BrowserRouter>
-    //   <p>Current theme: {isDarkMode ? "dark" : "light"}</p>
-    //   <Theme isDarkMode={isDarkMode} toggle={toggle} />
-    //   <DropdownLanguages />
-    //   <NextUIProvider theme={isDarkMode ? darkTheme : lightTheme}>
-    //     <ConnexionPage />
-    //   </NextUIProvider>
-    // </BrowserRouter>
     <NextUIProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <p>Current theme: {isDarkMode ? "dark" : "light"}</p>
       <Theme isDarkMode={isDarkMode} toggle={toggle} />
       <DropdownLanguages />
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <QueryClientProvider client={querryClient}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </QueryClientProvider>
     </NextUIProvider>
   );
 }
