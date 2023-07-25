@@ -6,7 +6,6 @@ import "./languages/i18n";
 import DropdownLanguages from "./components/dropdownLanguages";
 import Router from "./router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 const querryClient = new QueryClient();
 
 const lightTheme = createTheme({

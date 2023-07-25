@@ -1,7 +1,7 @@
 export const BackApi = {
-  postBody: {
-    connexion: {
-      key: "users",
+  connexion: {
+    postData: {
+      key: "register",
       url: "http://localhost:3000/api/auth/register",
     },
   },

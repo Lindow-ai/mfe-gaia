@@ -1,5 +1,14 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { PostBodyData } from "../../interfaces/dataInterface/postBodyInterface.type";
 
-export const POST = (url: string, body: {}) => {
-  axios.post(url, JSON.stringify(body));
+export const POST = async (
+  url: string,
+  data: PostBodyData
+): Promise<AxiosResponse> => {
+  try {
+    const response = await axios.post(url, JSON.stringify(data));
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
