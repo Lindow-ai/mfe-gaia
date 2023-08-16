@@ -5,6 +5,9 @@ import {
   ApiPostDataState,
 } from "../interfaces/contextInterface/apiPostDataContext.type";
 import { postData } from "../service/apiHelper";
+import { Id, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Actions pour modifier les états
 enum ApiActionTypes {
@@ -15,8 +18,8 @@ enum ApiActionTypes {
 
 type ApiAction =
   | { type: ApiActionTypes.START_LOADING }
-  | { type: ApiActionTypes.POST_SUCCESS; payload: string }
-  | { type: ApiActionTypes.POST_ERROR; payload: string };
+  | { type: ApiActionTypes.POST_SUCCESS; payload: Id }
+  | { type: ApiActionTypes.POST_ERROR; payload: Id };
 
 // Fonction réductrice pour gérer les états
 const apiReducer = (
@@ -42,8 +45,6 @@ export const ApiPostDataContext = createContext<ApiPostDataContextProps>({
   postApiData: async () => {},
 });
 
-export const useApiPostDataContext = () => useContext(ApiPostDataContext);
-
 // Provider du contexte
 export const ApiPostDataProvider: React.FC = ({ children }) => {
   const initialState: ApiPostDataState = {
@@ -54,20 +55,34 @@ export const ApiPostDataProvider: React.FC = ({ children }) => {
 
   const [state, dispatch] = useReducer(apiReducer, initialState);
 
-  const postApiData = async (pageType: string, data: PostBodyData) => {
+  const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const postApiData = async (
+    pageType: string,
+    key: string,
+    data: PostBodyData[typeof pageType],
+    urlNavigate?: string
+  ) => {
     dispatch({ type: ApiActionTypes.START_LOADING });
 
     try {
-      const response = await postData(pageType, data);
+      const response = await postData(pageType, key, data);
       dispatch({
         type: ApiActionTypes.POST_SUCCESS,
-        payload: "Requête réussie !",
+        payload: toast.success(t(`${pageType}.notification.success`), {
+          theme: "colored",
+        }),
       });
       // Faire quelque chose avec la réponse si nécessaire
+      navigate(urlNavigate);
     } catch (error) {
       dispatch({
         type: ApiActionTypes.POST_ERROR,
-        payload: "Une erreur est survenue lors de l'envoi de la requête.",
+        payload: toast.error(t(`${pageType}.notification.error`), {
+          theme: "colored",
+        }),
       });
       // Gérer l'erreur ici ou afficher un message d'erreur à l'utilisateur
     }

@@ -34,6 +34,10 @@ i18n
             ],
           },
           connexion: {
+            notification: {
+              error: "Registration failure !",
+              success: "Successful registration !",
+            },
             row: {
               col: {
                 image:
@@ -42,7 +46,7 @@ i18n
             },
             card: {
               cardHeader: {
-                title: "Connection",
+                title: "Connexion",
               },
               cardSubHeader: {
                 subTitle: "proxiad.com",
@@ -142,9 +146,13 @@ i18n
             ],
           },
           connexion: {
+            notification: {
+              error: "Echec lors de l'inscription !",
+              success: "Inscription réussi !",
+            },
             card: {
               cardHeader: {
-                title: "Connexion",
+                title: "Connection",
               },
               cardSubHeader: {
                 subTitle: "proxiad.com",

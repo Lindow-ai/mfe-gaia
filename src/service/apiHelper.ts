@@ -5,7 +5,8 @@ import { PostBodyData } from "../interfaces/dataInterface/postBodyInterface.type
 
 export const postData = async (
   pageType: string,
-  data: PostBodyData
+  key: string,
+  data: PostBodyData[typeof pageType]
 ): Promise<AxiosResponse> => {
-  return await POST(BackApi[pageType].postData.url, data);
+  return await POST(pageType, BackApi[pageType].postData[key].url, data);
 };

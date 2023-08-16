@@ -1,3 +1,6 @@
 export interface PostBodyData {
-  data: {};
+  [connexion: string]: {
+    email: string;
+    password: string;
+  };
 }

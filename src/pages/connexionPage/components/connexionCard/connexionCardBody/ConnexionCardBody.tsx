@@ -4,13 +4,35 @@ import { Mail } from "../../../../../assets/svg/Mail";
 import CardBody from "../../../../../components/card/cardBody";
 import { Input, Row, Checkbox, Text } from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
+import { Dispatch, SetStateAction, useCallback } from "react";
 
 type connexionCardBodyType = {
   pageType: string;
+  setUserData: Dispatch<
+    SetStateAction<{
+      email: string;
+      password: string;
+    }>
+  >;
+  userData: {
+    email: string;
+    password: string;
+  };
 };
 
-const ConnexionCardBody = ({ pageType }: connexionCardBodyType) => {
+const ConnexionCardBody = ({
+  pageType,
+  setUserData,
+  userData,
+}: connexionCardBodyType) => {
   const { t } = useTranslation();
+
+  const updateUserDataHandler = useCallback(
+    (type: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setUserData({ ...userData, [type]: event.target.value });
+    },
+    [userData]
+  );
 
   return (
     <CardBody cssBody={{ py: "$2" }}>
@@ -22,19 +44,12 @@ const ConnexionCardBody = ({ pageType }: connexionCardBodyType) => {
           fullWidth
           color="primary"
           size="lg"
-          placeholder={t(`${pageType}.card.cardBody.form.inputType.text`)}
-        />
-        <Input
-          css={{ marginBottom: "$9" }}
-          clearable
-          bordered
-          fullWidth
-          color="primary"
-          size="lg"
           placeholder={t(
             `${pageType}.card.cardBody.form.inputType.textWithImage`
           )}
           contentLeft={<Mail fill="currentColor" />}
+          value={userData.email}
+          onChange={updateUserDataHandler("email")}
         />
         <Input.Password
           css={{ marginBottom: "$9" }}
@@ -45,6 +60,8 @@ const ConnexionCardBody = ({ pageType }: connexionCardBodyType) => {
           size="lg"
           placeholder={t(`${pageType}.card.cardBody.form.inputType.password`)}
           contentLeft={<Password fill="currentColor" />}
+          value={userData.password}
+          onChange={updateUserDataHandler("password")}
         />
         <Row justify="space-between">
           <Checkbox>

@@ -5,8 +5,7 @@ import Theme from "./components/theme";
 import "./languages/i18n";
 import DropdownLanguages from "./components/dropdownLanguages";
 import Router from "./router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-const querryClient = new QueryClient();
+import { ToastContainer } from "react-toastify";
 
 const lightTheme = createTheme({
   type: "light",
@@ -24,11 +23,10 @@ export default function Root() {
       <p>Current theme: {isDarkMode ? "dark" : "light"}</p>
       <Theme isDarkMode={isDarkMode} toggle={toggle} />
       <DropdownLanguages />
-      <QueryClientProvider client={querryClient}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-      </QueryClientProvider>
+      <ToastContainer />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </NextUIProvider>
   );
 }
